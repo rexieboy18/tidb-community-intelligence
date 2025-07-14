@@ -1,5 +1,5 @@
-# TiDBDemo
-Demo Project for Sr. PM Position
+# tidb-community-intelligence
+🤖 AI-powered developer experience platform demo for PingCAP - transforming 37K+ GitHub stars into actionable insights
 # 🤖 TiDB Community Intelligence Demo 
 Lovingly created for the TidDB community with the help of Calude AI.
 
