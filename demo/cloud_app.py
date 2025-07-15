@@ -1,4 +1,34 @@
-import streamlit as st
+def get_sample_data():
+    """Fallback sample data if live API fails"""
+    return [
+        {
+            'id': 1,
+            'title': 'TiDB connection timeout in Kubernetes cluster',
+            'body': 'Getting connection timeouts when running TiDB in k8s environment with high load',
+            'state': 'closed',
+            'labels': ['type/bug', 'area/tikv', 'severity/major'],
+            'comments': 12,
+            'created_at': '2024-01-15T10:00:00Z',
+            'is_solved': True,
+            'category': 'bug',
+            'tech_context': ['kubernetes', 'performance']
+        },
+        {
+            'id': 2,
+            'title': 'Slow query performance with large dataset',
+            'body': 'Queries taking too long on tables with millions of rows, need optimization tips',
+            'state': 'open',
+            'labels': ['type/question', 'area/sql', 'area/planner'],
+            'comments': 8,
+            'created_at': '2024-01-14T15:30:00Z',
+            'is_solved': False,
+            'category': 'performance',
+            'tech_context': ['performance', 'mysql']
+        },
+        {
+            'id': 3,
+            'title': 'Docker deployment configuration help',
+            'body': 'Need help configuring TiDB cluster in Docker environment for producimport streamlit as st
 import requests
 import json
 import plotly.express as px
@@ -207,6 +237,21 @@ def main():
         st.stop()
     
     st.success(f"✅ Loaded {len(issues)} recent TiDB issues from GitHub")
+    
+    # Debug info (remove this after fixing)
+    with st.expander("🔍 Debug Info (Click to expand)"):
+        st.write("**Sample issue structure:**")
+        if issues:
+            st.json(issues[0])
+        
+        categories = Counter(issue['category'] for issue in issues)
+        st.write("**Categories found:**", dict(categories))
+        
+        tech_usage = Counter()
+        for issue in issues:
+            for tech in issue.get('tech_context', []):
+                tech_usage[tech] += 1
+        st.write("**Tech contexts found:**", dict(tech_usage))
     
     # Sidebar
     st.sidebar.header("🧭 Navigation")
