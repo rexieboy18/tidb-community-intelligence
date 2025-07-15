@@ -18,7 +18,7 @@ def main():
         st.markdown("""
         ## 👋 Hello PingCAP Hiring Team!
         
-        I have created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
+       I have created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
         
         ### 🎯 What This Demo Showcases
         
@@ -62,7 +62,6 @@ def main():
         - ✅ **Business Strategy** - Complete ROI framework
         - ✅ **User Focus** - Developer-centric design
         - ✅ **Community Understanding** - TiDB ecosystem analysis
-        
     
     # Detailed sections
     st.divider()
