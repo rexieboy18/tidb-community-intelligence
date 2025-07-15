@@ -18,7 +18,7 @@ def main():
         st.markdown("""
         ## 👋 Hello PingCAP Hiring Team!
         
-        **I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
+        I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
         
         ### 🎯 What This Demo Showcases
         
@@ -43,12 +43,10 @@ def main():
         col_a, col_b = st.columns(2)
         
         with col_a:
-            if st.button("🚀 Launch Live Demo", type="primary", use_container_width=True):
-                st.switch_page("cloud_app.py")
+            st.markdown("🚀 **[Launch Live Demo](https://your-streamlit-app-url.streamlit.app)**")
         
         with col_b:
-            if st.button("📋 View Source Code", use_container_width=True):
-                st.markdown("[GitHub Repository](https://github.com/rexieboy18/tidb-community-intelligence)")
+            st.markdown("📋 **[View Source Code](https://github.com/rexieboy18/tidb-community-intelligence)**")
     
     with col2:
         st.markdown("""
@@ -64,8 +62,8 @@ def main():
         - ✅ **Business Strategy** - Complete ROI framework
         - ✅ **User Focus** - Developer-centric design
         - ✅ **Community Understanding** - TiDB ecosystem analysis
-        
-           
+      
+    
     # Detailed sections
     st.divider()
     
@@ -141,10 +139,7 @@ def main():
         st.write("• 2x contribution rate")
         st.write("• Market leadership position")
     
-    st.info("*Note: Projections based on industry benchmarks and would require validation with PingCAP data*")ship position |
-    
-    *Note: Projections based on industry benchmarks and would require validation with PingCAP data*
-    """)
+    st.info("*Note: Projections based on industry benchmarks and would require validation with PingCAP data*")
     
     # Implementation roadmap
     st.subheader("🗺️ Implementation Approach")
