@@ -261,7 +261,7 @@ def main():
     # Intro banner for hiring managers
     with st.container():
         st.markdown("""
-        <div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; border-left: 5px solid #1f77b4; margin-bottom: 20px;">
+        <div style="background-color: #000080; padding: 20px; border-radius: 10px; border-left: 5px solid #1f77b4; margin-bottom: 20px;">
             <h3 style="color: #1f77b4; margin-top: 0;">👋 Welcome PingCAP Hiring Team!</h3>
             <p><strong>This is a working demo</strong> created specifically for the <strong>Senior Product Manager - Developer Experience</strong> role.</p>
             <p><strong>What you're seeing:</strong> A functional AI-powered platform that transforms TiDB's 37,000+ GitHub stars into actionable developer insights.</p>
