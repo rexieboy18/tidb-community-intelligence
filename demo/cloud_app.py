@@ -18,16 +18,16 @@ def main():
         st.markdown("""
         ## 👋 Hello PingCAP Hiring Team!
         
-        I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
+        I have created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
         
         ### 🎯 What This Demo Showcases
         
-        This isn't just a concept - it's a **fully functional platform** that demonstrates how TiDB's incredible community engagement (37,000+ GitHub stars) could be transformed into an AI-powered developer experience platform.
+        This is not just a concept - it is a **fully functional platform** that demonstrates how TiDB's incredible community engagement (37,000+ GitHub stars) could be transformed into an AI-powered developer experience platform.
         
         **Key Capabilities Demonstrated:**
         - 🔍 **AI-Powered Issue Search** - Semantic matching of developer problems with community solutions
-        - 🛠️ **Tech Stack Intelligence** - Personalized recommendations based on developer's technology ecosystem  
-        - 📊 **Community Analytics** - Real-time insights from TiDB's GitHub activity
+        - 🛠️ **Tech Stack Intelligence** - Personalized recommendations based on developer technology ecosystem  
+        - 📊 **Community Analytics** - Real-time insights from TiDB GitHub activity
         - 🚀 **Strategic Business Case** - Complete implementation roadmap with ROI analysis
         
         ### 💡 Why This Matters for PingCAP
@@ -179,19 +179,19 @@ def main():
     st.markdown("""
     ## 💬 A Personal Note
     
-    I built this demo because I'm genuinely excited about the opportunity to transform TiDB's developer experience. 
+    I built this demo because I am genuinely excited about the opportunity to transform TiDB developer experience. 
     
-    My background in **technical product management** at Starbucks taught me how to take complex technical platforms and make them accessible to users. I reduced integration complexity from 3 months to 3 weeks by focusing on self-service capabilities and intuitive design - exactly the kind of thinking that could benefit TiDB's developer community.
+    My background in **technical product management** at Starbucks taught me how to take complex technical platforms and make them accessible to users. I reduced integration complexity from 3 months to 3 weeks by focusing on self-service capabilities and intuitive design - exactly the kind of thinking that could benefit TiDB developer community.
     
     This demo represents my **product vision, technical execution ability, and strategic thinking** - the core skills needed for this role.
     
-    **I'd love to discuss how we can make this vision a reality at PingCAP!**
+    **I would love to discuss how we can make this vision a reality at PingCAP!**
     """)
     
     # Footer
     st.markdown("""
     ---
-    *This demo was created specifically for PingCAP's Senior Product Manager - Developer Experience role. 
+    *This demo was created specifically for PingCAP Senior Product Manager - Developer Experience role. 
     All code is available on [GitHub](https://github.com/rexieboy18/tidb-community-intelligence) under MIT license.*
     """)
 
