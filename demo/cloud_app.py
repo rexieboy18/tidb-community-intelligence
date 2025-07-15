@@ -278,21 +278,6 @@ def main():
     
     st.success(f"✅ Loaded {len(issues)} recent TiDB issues from GitHub")
     
-    # Debug info (remove this after fixing)
-    with st.expander("🔍 Debug Info (Click to expand)"):
-        st.write("**Sample issue structure:**")
-        if issues:
-            st.json(issues[0])
-        
-        categories = Counter(issue['category'] for issue in issues)
-        st.write("**Categories found:**", dict(categories))
-        
-        tech_usage = Counter()
-        for issue in issues:
-            for tech in issue.get('tech_context', []):
-                tech_usage[tech] += 1
-        st.write("**Tech contexts found:**", dict(tech_usage))
-    
     # Sidebar
     st.sidebar.header("🧭 Navigation")
     page = st.sidebar.selectbox(
