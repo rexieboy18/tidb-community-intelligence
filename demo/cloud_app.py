@@ -64,7 +64,8 @@ def main():
         - ✅ **Business Strategy** - Complete ROI framework
         - ✅ **User Focus** - Developer-centric design
         - ✅ **Community Understanding** - TiDB ecosystem analysis
-            
+        
+    
     # Detailed sections
     st.divider()
     
