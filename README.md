@@ -173,3 +173,4 @@ cd ../demo && streamlit run advanced_app.py
 - 📅 Global deployment
 - 📅 Partner ecosystem integrations
 - 🎯 **Target**: 95% automation rate, 2x community growth
+![Demo Status](https://github.com/rexieBoy18/tidb-community-intelligence/workflows/TiDB%20Community%20Intelligence%20Demo/badge.svg)
