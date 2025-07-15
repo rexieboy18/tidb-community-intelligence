@@ -18,7 +18,7 @@ def main():
         st.markdown("""
         ## 👋 Hello PingCAP Hiring Team!
         
-        **I'm Randi Pedigo**, and I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
+        I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
         
         ### 🎯 What This Demo Showcases
         
@@ -64,14 +64,7 @@ def main():
         - ✅ **Business Strategy** - Complete ROI framework
         - ✅ **User Focus** - Developer-centric design
         - ✅ **Community Understanding** - TiDB ecosystem analysis
-        
-        ### 📞 Let's Connect!
-        **Randi Pedigo**  
-        📧 randi.pedigo@gmail.com  
-        📱 (206) 856-2776  
-        💼 [LinkedIn Profile](https://www.linkedin.com/in/randi-pedigo-77317721/)
-        """)
-    
+            
     # Detailed sections
     st.divider()
     
