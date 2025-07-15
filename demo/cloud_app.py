@@ -18,7 +18,7 @@ def main():
         st.markdown("""
         ## 👋 Hello PingCAP Hiring Team!
         
-        I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
+        **I've created this working demonstration specifically for the **Senior Product Manager - Developer Experience** position.
         
         ### 🎯 What This Demo Showcases
         
@@ -65,7 +65,7 @@ def main():
         - ✅ **User Focus** - Developer-centric design
         - ✅ **Community Understanding** - TiDB ecosystem analysis
         
-    
+           
     # Detailed sections
     st.divider()
     
@@ -106,13 +106,42 @@ def main():
     
     st.markdown("""
     This demo includes a comprehensive business case showing how community intelligence could:
+    """)
     
-    | Impact Area | Current Challenge | AI-Powered Solution | Projected Improvement |
-    |-------------|------------------|-------------------|---------------------|
-    | **Developer Onboarding** | 2-3 days typical setup time | Intelligent guided workflows | 40-60% time reduction |
-    | **Support Efficiency** | 40% repetitive tickets | Automated similarity matching | 70% ticket deflection |
-    | **Community Engagement** | Scattered knowledge | Centralized intelligence | 2x contribution rate |
-    | **Product Differentiation** | Standard database offering | AI-native developer experience | Market leadership position |
+    # Create the table using Streamlit columns instead of markdown table
+    st.markdown("**Projected Impact Analysis:**")
+    
+    col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
+    
+    with col1:
+        st.markdown("**Impact Area**")
+        st.write("• Developer Onboarding")
+        st.write("• Support Efficiency") 
+        st.write("• Community Engagement")
+        st.write("• Product Differentiation")
+    
+    with col2:
+        st.markdown("**Current Challenge**")
+        st.write("• 2-3 days typical setup time")
+        st.write("• 40% repetitive tickets")
+        st.write("• Scattered knowledge")
+        st.write("• Standard database offering")
+    
+    with col3:
+        st.markdown("**AI-Powered Solution**")
+        st.write("• Intelligent guided workflows")
+        st.write("• Automated similarity matching")
+        st.write("• Centralized intelligence")
+        st.write("• AI-native developer experience")
+    
+    with col4:
+        st.markdown("**Projected Improvement**")
+        st.write("• 40-60% time reduction")
+        st.write("• 70% ticket deflection")
+        st.write("• 2x contribution rate")
+        st.write("• Market leadership position")
+    
+    st.info("*Note: Projections based on industry benchmarks and would require validation with PingCAP data*")ship position |
     
     *Note: Projections based on industry benchmarks and would require validation with PingCAP data*
     """)
