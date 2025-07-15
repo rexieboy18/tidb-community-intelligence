@@ -1,0 +1,171 @@
+{
+  "summary": {
+    "total_issues": 81,
+    "open_issues": 45,
+    "closed_issues": 36,
+    "solution_rate": 0.2222222222222222,
+    "recent_issues": 64,
+    "avg_comments": 1.7901234567901234,
+    "avg_engagement": 8.950617283950617
+  },
+  "categories": {
+    "distribution": {
+      "bug": 52,
+      "enhancement": 20,
+      "other": 8,
+      "migration": 1
+    },
+    "solution_rates": {
+      "bug": 0.3076923076923077,
+      "enhancement": 0.1,
+      "migration": 0.0,
+      "other": 0.0
+    },
+    "avg_engagement": {
+      "bug": 11.557692307692308,
+      "enhancement": 4.9,
+      "migration": 12.0,
+      "other": 1.75
+    }
+  },
+  "technology": {
+    "usage": {
+      "tikv": 25,
+      "backup": 23,
+      "mysql": 23,
+      "pd": 21,
+      "docker": 15,
+      "performance": 8,
+      "tiflash": 6,
+      "cloud": 5,
+      "monitoring": 5,
+      "replication": 4,
+      "kubernetes": 3,
+      "cdc": 2
+    },
+    "combinations": [
+      {
+        "technologies": [
+          "backup",
+          "tikv"
+        ],
+        "count": 11
+      },
+      {
+        "technologies": [
+          "backup",
+          "mysql"
+        ],
+        "count": 7
+      },
+      {
+        "technologies": [
+          "mysql",
+          "tikv"
+        ],
+        "count": 7
+      },
+      {
+        "technologies": [
+          "pd",
+          "tikv"
+        ],
+        "count": 7
+      },
+      {
+        "technologies": [
+          "backup",
+          "pd"
+        ],
+        "count": 6
+      },
+      {
+        "technologies": [
+          "mysql",
+          "pd"
+        ],
+        "count": 4
+      },
+      {
+        "technologies": [
+          "docker",
+          "tikv"
+        ],
+        "count": 4
+      },
+      {
+        "technologies": [
+          "backup",
+          "docker"
+        ],
+        "count": 4
+      },
+      {
+        "technologies": [
+          "docker",
+          "performance"
+        ],
+        "count": 4
+      },
+      {
+        "technologies": [
+          "pd",
+          "replication"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  "temporal": {
+    "monthly_trends": {
+      "2020-04": 1,
+      "2023-06": 1,
+      "2023-09": 1,
+      "2023-12": 1,
+      "2024-08": 1,
+      "2024-09": 1,
+      "2024-11": 3,
+      "2024-12": 2,
+      "2025-01": 2,
+      "2025-02": 2,
+      "2025-03": 1,
+      "2025-04": 10,
+      "2025-05": 7,
+      "2025-06": 25,
+      "2025-07": 23
+    },
+    "resolution_times": {
+      "avg_hours": 542.2767361111112,
+      "median_hours": 171.61666666666667,
+      "by_category": {
+        "bug": 640.4497942386832,
+        "enhancement": 251.55031250000002,
+        "other": 217.41555555555556
+      }
+    }
+  },
+  "community": {
+    "top_contributors": {
+      "hawkingrei": 7,
+      "D3Hunter": 4,
+      "Defined2014": 3,
+      "glorv": 3,
+      "tiancaiamao": 3,
+      "takaidohigasi": 3,
+      "EmmaDuDu": 3,
+      "apollodafoni": 2,
+      "crazycs520": 2,
+      "pcqz": 2
+    },
+    "engagement_distribution": {
+      "count": 81.0,
+      "mean": 8.950617283950617,
+      "std": 7.1254846055687695,
+      "min": 0.0,
+      "25%": 3.0,
+      "50%": 6.0,
+      "75%": 12.0,
+      "max": 28.0
+    }
+  }
+}
