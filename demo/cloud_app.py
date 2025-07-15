@@ -1,34 +1,4 @@
-def get_sample_data():
-    """Fallback sample data if live API fails"""
-    return [
-        {
-            'id': 1,
-            'title': 'TiDB connection timeout in Kubernetes cluster',
-            'body': 'Getting connection timeouts when running TiDB in k8s environment with high load',
-            'state': 'closed',
-            'labels': ['type/bug', 'area/tikv', 'severity/major'],
-            'comments': 12,
-            'created_at': '2024-01-15T10:00:00Z',
-            'is_solved': True,
-            'category': 'bug',
-            'tech_context': ['kubernetes', 'performance']
-        },
-        {
-            'id': 2,
-            'title': 'Slow query performance with large dataset',
-            'body': 'Queries taking too long on tables with millions of rows, need optimization tips',
-            'state': 'open',
-            'labels': ['type/question', 'area/sql', 'area/planner'],
-            'comments': 8,
-            'created_at': '2024-01-14T15:30:00Z',
-            'is_solved': False,
-            'category': 'performance',
-            'tech_context': ['performance', 'mysql']
-        },
-        {
-            'id': 3,
-            'title': 'Docker deployment configuration help',
-            'body': 'Need help configuring TiDB cluster in Docker environment for producimport streamlit as st
+import streamlit as st
 import requests
 import json
 import plotly.express as px
@@ -134,38 +104,98 @@ def get_sample_data():
         {
             'id': 1,
             'title': 'TiDB connection timeout in Kubernetes cluster',
-            'body': 'Getting connection timeouts when running TiDB in k8s environment',
+            'body': 'Getting connection timeouts when running TiDB in k8s environment with high load',
             'state': 'closed',
-            'labels': ['type/bug', 'area/tikv'],
-            'comments': 5,
+            'labels': ['type/bug', 'area/tikv', 'severity/major'],
+            'comments': 12,
             'created_at': '2024-01-15T10:00:00Z',
             'is_solved': True,
             'category': 'bug',
-            'tech_context': ['kubernetes']
+            'tech_context': ['kubernetes', 'performance']
         },
         {
             'id': 2,
             'title': 'Slow query performance with large dataset',
-            'body': 'Queries taking too long on tables with millions of rows',
+            'body': 'Queries taking too long on tables with millions of rows, need optimization tips',
             'state': 'open',
-            'labels': ['type/question', 'area/sql'],
-            'comments': 3,
+            'labels': ['type/question', 'area/sql', 'area/planner'],
+            'comments': 8,
             'created_at': '2024-01-14T15:30:00Z',
             'is_solved': False,
             'category': 'performance',
-            'tech_context': ['performance']
+            'tech_context': ['performance', 'mysql']
         },
         {
             'id': 3,
             'title': 'Docker deployment configuration help',
-            'body': 'Need help configuring TiDB cluster in Docker environment',
+            'body': 'Need help configuring TiDB cluster in Docker environment for production',
             'state': 'closed',
-            'labels': ['type/question'],
-            'comments': 8,
+            'labels': ['type/question', 'area/deployment'],
+            'comments': 15,
             'created_at': '2024-01-13T09:20:00Z',
             'is_solved': True,
             'category': 'question',
-            'tech_context': ['docker']
+            'tech_context': ['docker', 'cloud']
+        },
+        {
+            'id': 4,
+            'title': 'Migration from MySQL to TiDB best practices',
+            'body': 'Looking for guidance on migrating large MySQL database to TiDB',
+            'state': 'closed',
+            'labels': ['type/question', 'area/migration'],
+            'comments': 20,
+            'created_at': '2024-01-12T14:45:00Z',
+            'is_solved': True,
+            'category': 'migration',
+            'tech_context': ['mysql', 'cloud']
+        },
+        {
+            'id': 5,
+            'title': 'TiFlash replica sync issue',
+            'body': 'TiFlash replicas not syncing properly with TiKV in our cluster',
+            'state': 'open',
+            'labels': ['type/bug', 'area/tiflash'],
+            'comments': 6,
+            'created_at': '2024-01-11T11:30:00Z',
+            'is_solved': False,
+            'category': 'bug',
+            'tech_context': ['tiflash', 'performance']
+        },
+        {
+            'id': 6,
+            'title': 'Prometheus monitoring setup for TiDB',
+            'body': 'How to properly configure Prometheus monitoring for TiDB cluster',
+            'state': 'closed',
+            'labels': ['type/question', 'area/monitoring'],
+            'comments': 10,
+            'created_at': '2024-01-10T16:20:00Z',
+            'is_solved': True,
+            'category': 'monitoring',
+            'tech_context': ['monitoring', 'kubernetes']
+        },
+        {
+            'id': 7,
+            'title': 'AWS EKS deployment optimization',
+            'body': 'Optimizing TiDB deployment on AWS EKS for better performance',
+            'state': 'open',
+            'labels': ['type/enhancement', 'area/deployment'],
+            'comments': 4,
+            'created_at': '2024-01-09T13:15:00Z',
+            'is_solved': False,
+            'category': 'enhancement',
+            'tech_context': ['cloud', 'kubernetes', 'performance']
+        },
+        {
+            'id': 8,
+            'title': 'Backup and restore with BR tool',
+            'body': 'Questions about using BR tool for backup and restore operations',
+            'state': 'closed',
+            'labels': ['type/question', 'area/br'],
+            'comments': 7,
+            'created_at': '2024-01-08T10:00:00Z',
+            'is_solved': True,
+            'category': 'question',
+            'tech_context': ['backup', 'cloud']
         }
     ]
 
