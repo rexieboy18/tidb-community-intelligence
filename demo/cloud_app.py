@@ -259,8 +259,18 @@ def main():
     st.markdown("*Live demo powered by real TiDB GitHub data*")
     
     # Data loading with progress
-    with st.spinner("🔄 Loading live TiDB community data..."):
-        issues = collect_live_data()
+    data_source = st.sidebar.radio(
+        "📊 Data Source:",
+        ["Live GitHub API", "Rich Sample Data"],
+        help="Live API may have limited data. Sample data shows full functionality."
+    )
+    
+    with st.spinner("🔄 Loading TiDB community data..."):
+        if data_source == "Live GitHub API":
+            issues = collect_live_data()
+        else:
+            issues = get_sample_data()
+            st.info("📊 Using rich sample data to demonstrate full functionality")
     
     if not issues:
         st.error("Could not load data. Please try again later.")
@@ -315,24 +325,76 @@ def main():
         st.subheader("Issue Categories")
         category_counts = Counter(issue['category'] for issue in issues)
         
-        if category_counts:
+        if category_counts and len(category_counts) > 0:
+            # Create pie chart
             fig = px.pie(
                 values=list(category_counts.values()),
                 names=list(category_counts.keys()),
-                title="Distribution of Issue Categories"
+                title="Distribution of Issue Categories",
+                color_discrete_sequence=px.colors.qualitative.Set3
             )
+            fig.update_traces(textposition='inside', textinfo='percent+label')
             st.plotly_chart(fig, use_container_width=True)
+            
+            # Also show as bar chart for better readability
+            fig_bar = px.bar(
+                x=list(category_counts.keys()),
+                y=list(category_counts.values()),
+                title="Issue Count by Category",
+                labels={'x': 'Category', 'y': 'Number of Issues'},
+                color=list(category_counts.values()),
+                color_continuous_scale='viridis'
+            )
+            st.plotly_chart(fig_bar, use_container_width=True)
+        else:
+            st.warning("No category data available for charts")
+        
+        # Technology usage chart
+        st.subheader("🔧 Technology Mentions")
+        tech_usage = Counter()
+        for issue in issues:
+            for tech in issue.get('tech_context', []):
+                tech_usage[tech] += 1
+        
+        if tech_usage and len(tech_usage) > 0:
+            fig_tech = px.bar(
+                x=list(tech_usage.values()),
+                y=list(tech_usage.keys()),
+                orientation='h',
+                title="Technologies Mentioned in Issues",
+                labels={'x': 'Number of Mentions', 'y': 'Technology'},
+                color=list(tech_usage.values()),
+                color_continuous_scale='plasma'
+            )
+            st.plotly_chart(fig_tech, use_container_width=True)
+        else:
+            st.info("No technology context data available")
         
         # Recent activity
         st.subheader("📈 Recent Activity")
-        df = pd.DataFrame(issues)
-        df['created_date'] = pd.to_datetime(df['created_at']).dt.date
-        
-        daily_issues = df.groupby('created_date').size().reset_index(name='count')
-        
-        fig = px.line(daily_issues, x='created_date', y='count', 
-                     title="Daily Issue Creation Trend")
-        st.plotly_chart(fig, use_container_width=True)
+        if len(issues) > 1:
+            try:
+                df = pd.DataFrame(issues)
+                df['created_date'] = pd.to_datetime(df['created_at']).dt.date
+                
+                daily_issues = df.groupby('created_date').size().reset_index(name='count')
+                
+                if len(daily_issues) > 1:
+                    fig_trend = px.line(
+                        daily_issues, 
+                        x='created_date', 
+                        y='count', 
+                        title="Daily Issue Creation Trend",
+                        markers=True
+                    )
+                    fig_trend.update_layout(xaxis_title="Date", yaxis_title="Number of Issues")
+                    st.plotly_chart(fig_trend, use_container_width=True)
+                else:
+                    st.info("Not enough data points for trend analysis")
+            except Exception as e:
+                st.warning(f"Could not generate trend chart: {e}")
+        else:
+            st.info("Need more data for trend analysis")
     
     elif page == "🔍 AI Issue Search":
         st.header("🔍 AI-Powered Issue Search")
@@ -434,34 +496,49 @@ def main():
             for tech in issue.get('tech_context', []):
                 tech_usage[tech] += 1
         
-        if tech_usage:
+        if tech_usage and len(tech_usage) > 0:
             fig = px.bar(
                 x=list(tech_usage.values()),
                 y=list(tech_usage.keys()),
                 orientation='h',
-                title="Technologies Mentioned in Issues"
+                title="Technologies Mentioned in Issues",
+                labels={'x': 'Number of Mentions', 'y': 'Technology'},
+                color=list(tech_usage.values()),
+                color_continuous_scale='viridis'
             )
+            fig.update_layout(height=400)
             st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No technology mentions found in current dataset")
         
         # Solution effectiveness
         st.subheader("💡 Solution Effectiveness")
         categories = Counter(issue['category'] for issue in issues)
         
-        solution_rates = {}
-        for category in categories.keys():
-            cat_issues = [i for i in issues if i['category'] == category]
-            if cat_issues:
-                solved = sum(1 for i in cat_issues if i['is_solved'])
-                solution_rates[category] = solved / len(cat_issues)
-        
-        if solution_rates:
-            fig = px.bar(
-                x=list(solution_rates.keys()),
-                y=[rate * 100 for rate in solution_rates.values()],
-                title="Solution Rate by Category (%)",
-                labels={'x': 'Category', 'y': 'Solution Rate (%)'}
-            )
-            st.plotly_chart(fig, use_container_width=True)
+        if categories and len(categories) > 0:
+            solution_rates = {}
+            for category in categories.keys():
+                cat_issues = [i for i in issues if i['category'] == category]
+                if cat_issues:
+                    solved = sum(1 for i in cat_issues if i['is_solved'])
+                    solution_rates[category] = solved / len(cat_issues)
+            
+            if solution_rates:
+                fig = px.bar(
+                    x=list(solution_rates.keys()),
+                    y=[rate * 100 for rate in solution_rates.values()],
+                    title="Solution Rate by Category (%)",
+                    labels={'x': 'Category', 'y': 'Solution Rate (%)'},
+                    color=[rate * 100 for rate in solution_rates.values()],
+                    color_continuous_scale='RdYlGn',
+                    range_color=[0, 100]
+                )
+                fig.update_layout(height=400)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("No solution rate data available")
+        else:
+            st.info("No category data available for solution analysis")
     
     # Footer
     st.divider()
